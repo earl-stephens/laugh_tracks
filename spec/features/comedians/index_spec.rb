@@ -41,6 +41,7 @@ save_and_open_page
       expect(page).to_not have_content(@comedian_2.name)
       expect(page).to have_content(@special_1.title)
       expect(page).to have_content(@special_1.length)
+      expect(page).to have_css("img[src*='#{@special_1.image}']")
     end
 
     within ".comedian#{@comedian_1.id}"do
