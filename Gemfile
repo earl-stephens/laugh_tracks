@@ -41,6 +41,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'active-designer'
   gem 'simplecov'
+  gem 'factory_bot_rails'
 end
 
 group :development do
