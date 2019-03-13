@@ -5,5 +5,11 @@
     <%= comedian.name %>
     <%= comedian.age %>
     <%= comedian.city %>
+    <% @specials.each do |special| %>
+      <% if special.comedian_id == comedian.id %>
+        <%= special.title %>
+        <%= special.length %>
+      <% end %>
+    <% end %>
   </section>
 <% end %>
