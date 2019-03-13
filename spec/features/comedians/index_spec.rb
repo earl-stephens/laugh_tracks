@@ -67,7 +67,7 @@ describe "comedian index page" do
     expected = ["Portland", "San Diego", "Seattle"]
 
     within ".statistics" do
-      expect(page).to have_content("Average age: 25")
+      expect(page).to have_content("Average age: 30")
       expect(page).to have_content("Average special run length: 60")
       expect(page).to have_content("Cities: #{expected}")
     end

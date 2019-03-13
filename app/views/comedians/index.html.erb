@@ -1,5 +1,11 @@
 <h1>Welcome to Laugh Tracks!</h1>
 
+<section class="statistics">
+  <p>Average age: <%= @avg_age %></p>
+  <p>Average special run length: <%= @avg_run_length %></p>
+  <p>Cities: <%= @cities %></p>
+</section>
+
 <% @comedians.each do |comedian| %>
   <section class="comedian<%= comedian.id %>">
     <ul>
