@@ -26,5 +26,6 @@ RSpec.describe Special, type: :model do
     it ".avg_run_length" do
       expect(Special.avg_run_length).to eq(60)
     end
+
   end
 end

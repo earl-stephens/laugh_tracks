@@ -64,7 +64,7 @@ describe "comedian index page" do
   it "shows a statistics area" do
     visit root_path
 
-    expected = ["Portland", "Seattle", "San Diego"]
+    expected = ["Portland", "San Diego", "Seattle"]
 
     within ".statistics" do
       expect(page).to have_content("Average age: 25")
