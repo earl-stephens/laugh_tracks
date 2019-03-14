@@ -3,6 +3,7 @@
 <section class="statistics">
   <h2>Statistics</h2>
   <p>Average age: <%= @avg_age.round %></p>
+  <p>Total number of specials: <%= @total_special_count %><p>
   <p>Average special run length: <%= @avg_run_length %></p>
   <p>Cities:
     <ul>
@@ -19,13 +20,12 @@
       <li><%= comedian.name %></li>
       <li>Age: <%= comedian.age %></li>
       <li>City: <%= comedian.city %></li>
+      <li>Number of specials: <%= comedian.specials.count %></li>
     </ul>
-    <% @specials.each do |special| %>
-      <% if special.comedian_id == comedian.id %>
+    <% comedian.specials.each do |special| %>
       <p><img src="<%= special.image %>" class="special_image"/></p>
         <%= special.title %>
         <p>Length: <%= special.length %></p>
-      <% end %>
     <% end %>
   </section>
 <% end %>

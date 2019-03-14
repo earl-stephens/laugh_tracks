@@ -61,6 +61,18 @@ describe "comedian index page" do
     end
   end
 
+  it "shows a count of a comedian's specials" do
+    visit root_path
+
+    within ".comedian#{@comedian_2.id}"do
+      expect(page).to have_content("Number of specials: 2")
+    end
+
+    within ".comedian#{@comedian_3.id}"do
+      expect(page).to have_content("Number of specials: 1")
+    end
+  end
+
   it "shows a statistics area" do
     visit root_path
 
@@ -71,6 +83,7 @@ describe "comedian index page" do
       expect(page).to have_content("Portland")
       expect(page).to have_content("San Diego")
       expect(page).to have_content("Seattle")
+      expect(page).to have_content("Total number of specials: 5")
     end
   end
 
