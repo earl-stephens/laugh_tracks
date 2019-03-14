@@ -3,8 +3,8 @@ require 'rails_helper'
 describe "comedian index page" do
   before :each do
     @comedian_1 = create(:comedian)
-    @comedian_2 = create(:comedian, age: 30, city: "Seattle")
-    @comedian_3 = create(:comedian, age: 35, city: "San Diego")
+    @comedian_2 = create(:comedian, age: 34, city: "Seattle")
+    @comedian_3 = create(:comedian, age: 43, city: "San Diego")
     @special_1 = create(:special, comedian_id: @comedian_1.id)
     @special_2 = create(:special, comedian_id: @comedian_1.id, length: 55)
     @special_3 = create(:special, comedian_id: @comedian_2.id, length: 65)
@@ -64,12 +64,24 @@ describe "comedian index page" do
   it "shows a statistics area" do
     visit root_path
 
-    expected = ["Portland", "San Diego", "Seattle"]
-
     within ".statistics" do
-      expect(page).to have_content("Average age: 30")
+      expect(page).to have_content("Average age: 34")
       expect(page).to have_content("Average special run length: 60")
-      expect(page).to have_content("Cities: #{expected}")
+      expect(page).to have_content("Cities:")
+      expect(page).to have_content("Portland")
+      expect(page).to have_content("San Diego")
+      expect(page).to have_content("Seattle")
+    end
+  end
+
+  describe "when user visits /comedians?age=34" do
+    it "lists comedians who match that age" do
+      visit '/comedians?age=34'
+# save_and_open_page
+      expect(page).to have_content(@comedian_2.name)
+      expect(page).to have_content(@comedian_2.age)
+      expect(page).to have_content(@comedian_2.city)
+      expect(page).to_not have_content(@comedian_1.name)
     end
   end
 
