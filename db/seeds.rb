@@ -12,7 +12,7 @@ Comedian.create(name: "Bob Newhart", age: 89, city: "Oak Park")
 Comedian.create(name: "Carol Burnett", age: 85, city: "San Antonio")
 Comedian.create(name: "Daniel Tosh", age: 43, city: "West Germany")
 Comedian.create(name: "Chris Rock", age: 53, city: "Andrews")
-Comedian.create(name: "Ron White", age: 62, city: "Fritch")
+Comedian.create(name: "Ron White", age: 63, city: "Fritch")
 Comedian.create(name: "Larry The Cable Guy", age: 55, city: "Pawnee City")
 Comedian.create(name: "Eddie Murphy", age: 57, city: "Brooklyn")
 Comedian.create(name: "Tim Allen", age: 65, city: "Denver")
@@ -20,7 +20,7 @@ Comedian.create(name: "Dana Carvey", age: 63, city: "Missoula")
 
 ellen = Comedian.find_by(name: "Ellen DeGeneres")
 ellen.specials.create(title: "Relatable", length: 68, image: "https://m.media-amazon.com/images/M/MV5BYTlmYzI2NTMtYmZmOS00ZTYzLTg2ZTUtZDhkZjhkZDVjMWQwXkEyXkFqcGdeQXVyNDg4NjY5OTQ@._V1_UX182_CR0,0,182,268_AL_.jpg")
-ellen.specials.create(title: "Here and Now", length: 60, image: "https://www.imdb.com/title/tt0365156/mediaviewer/rm3888815360?ref_=tt_ov_i")
+ellen.specials.create(title: "Here and Now", length: 60, image: "https://m.media-amazon.com/images/I/81Sqm44+cWL._AC_UL436_.jpg")
 ellen.specials.create(title: "The Beginning", length: 66, image: "https://m.media-amazon.com/images/M/MV5BODQxNzQzMDc4Nl5BMl5BanBnXkFtZTgwMTgwNjgwMzE@._V1_UY268_CR9,0,182,268_AL_.jpg")
 
 anjelah = Comedian.find_by(name: "Anjelah Johnson-Reyes")
@@ -56,7 +56,7 @@ ron.specials.create(title: "Ron White's Comedy Salute to the Troops", length: 76
 
 larry = Comedian.find_by(name: "Larry The Cable Guy")
 larry.specials.create(title: "We've Been Thinking", length: 75, image: "https://m.media-amazon.com/images/M/MV5BYTE2YzkyNDYtODA3YS00MzA2LWE1N2ItYjg4YmNkN2ZjOTYyXkEyXkFqcGdeQXVyNDU1OTg0MDE@._V1_UY268_CR9,0,182,268_AL_.jpg")
-larry.specials.create(title: "Larry The Cable Guy's Star-Studded Christmas Extravaganza", length: 90, image: "https://www.imdb.com/title/tt1273807/mediaviewer/rm2617152768?ref_=tt_ov_i")
+larry.specials.create(title: "Larry The Cable Guy's Star-Studded Christmas Extravaganza", length: 90, image: "https://m.media-amazon.com/images/I/51dy1mnVGxL._AC_UL436_.jpg")
 
 eddie = Comedian.find_by(name: "Eddie Murphy")
 eddie.specials.create(title: "Delirious", length: 69, image: "https://m.media-amazon.com/images/M/MV5BMTQ5MDcyODU0Nl5BMl5BanBnXkFtZTcwMTgxNjA0MQ@@._V1_UY268_CR4,0,182,268_AL_.jpg")

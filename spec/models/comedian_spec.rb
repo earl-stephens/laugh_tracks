@@ -31,6 +31,15 @@ RSpec.describe Comedian, type: :model do
     it ".unique_cities" do
       expect(Comedian.unique_cities).to eq(["Portland", "Seattle"])
     end
+
+    it ".cities_by_age" do
+      expect(Comedian.cities_by_age(25)).to eq(["Portland"])
+      expect(Comedian.cities_by_age(35)).to eq(["Seattle"])
+    end
+  end
+
+  describe 'instance methods' do
+
   end
 
 end

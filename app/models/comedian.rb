@@ -11,4 +11,8 @@ class Comedian < ApplicationRecord
     order(:city).distinct.pluck(:city)
   end
 
+  def self.cities_by_age(comedian_params)
+    order(:city).where(age: comedian_params.to_i).pluck(:city)
+  end
+
 end
