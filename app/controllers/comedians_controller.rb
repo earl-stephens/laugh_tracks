@@ -21,6 +21,10 @@ class ComediansController < ApplicationController
     end
   end
 
+  def new
+    @comedian = Comedian.new
+  end
+
   private
 
   def comedian_params

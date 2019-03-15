@@ -1,0 +1,11 @@
+<h1>Add a new comedian</h1>
+
+<%= form_for(@comedian) do |f| %>
+<%= f.label :name %>
+<%= f.text :name %>
+<%= f.label :age %>
+<%= f.integer :age %>
+<%= f.label :city %>
+<%= f.text :name %>
+<%= f.submit "Add new comedian" %>
+<% end %>
