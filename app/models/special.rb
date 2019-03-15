@@ -10,6 +10,7 @@ class Special < ApplicationRecord
 
   def self.special_length_by_age(comedian_params)
     comics = Comedian.where(age: comedian_params.to_i)
+    # binding.pry
     where(comedian_id: comics).average(:length).round
   end
 
@@ -17,10 +18,10 @@ class Special < ApplicationRecord
     where(comedian_id: comedian).count
   end
 
-  def count_of_specials(comedian)
-    # binding.pry
-    comedian.first.specials.count
-  end
+  # def count_of_specials(comedian)
+  #   # binding.pry
+  #   comedian.first.specials.count
+  # end
 
   def self.total_special_count(age="all")
     # binding.pry

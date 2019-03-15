@@ -87,6 +87,14 @@ describe "comedian index page" do
     end
   end
 
+  it "shows a link to new comedians page" do
+    visit root_path
+
+    within ".new_link" do
+      expect(page).to have_link("Add new comedian")
+    end
+  end
+
   describe "when user visits /comedians?age=34" do
     it "lists comedians who match that age" do
       visit '/comedians?age=34'

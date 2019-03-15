@@ -13,6 +13,10 @@
     </ul></p>
 </section>
 
+<section class="new_link">
+  <%= link_to "Add new comedian", new_comedian_path %>
+</section>
+
 <h2>Comedians</h2>
 <% @comedians.each do |comedian| %>
   <section class="comedian<%= comedian.id %>">
