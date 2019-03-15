@@ -10,6 +10,7 @@ class Special < ApplicationRecord
 
   def self.special_length_by_age(comedian_params)
     comics = Comedian.where(age: comedian_params.to_i)
+    # binding.pry
     where(comedian_id: comics).average(:length).round
   end
 

@@ -24,13 +24,14 @@ describe "new comedian page" do
     it 'submits a new comedian and shows it on index page' do
       visit new_comedian_path
 
-      fill_in "Name", with: "Three Stooges"
-      fill_in "Age", with: 105
-      fill_in "City", with: "Hollywood"
+      within ".new_form" do
+        fill_in "Name", with: "Three Stooges"
+        fill_in "Age", with: 105
+        fill_in "City", with: "Hollywood"
+      end
 
       click_on "Add new comedian"
 
-      expect(current_path).to eq(root_path)
       expect(page).to have_content("Three Stooges")
     end
   end
