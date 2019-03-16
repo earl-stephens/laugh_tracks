@@ -1,5 +1,8 @@
 class ComediansController < ApplicationController
 
+  def welcome
+  end
+
   def index
     # binding.pry
     if params[:age] != nil
@@ -30,7 +33,7 @@ class ComediansController < ApplicationController
     # binding.pry
     @comedian = Comedian.new(comedian_params)
     if @comedian.save
-      redirect_to root_path
+      redirect_to comedians_path
     else
       render :new
     end

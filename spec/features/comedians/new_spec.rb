@@ -14,7 +14,7 @@ describe "new comedian page" do
 
   describe 'can enter data for new comedian' do
     it 'links to the new form from the index page' do
-      visit root_path
+      visit comedians_path
 
       click_link "Add new comedian"
 
