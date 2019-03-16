@@ -13,7 +13,7 @@ describe "comedian index page" do
   end
 
   it "shows list of comedians" do
-    visit root_path
+    visit comedians_path
 
     within ".comedian#{@comedian_1.id}"do
       expect(page).to have_content(@comedian_1.name)
@@ -31,7 +31,7 @@ describe "comedian index page" do
   end
 
   it "shows list of comedian specials" do
-    visit root_path
+    visit comedians_path
 # save_and_open_page
     within ".comedian#{@comedian_1.id}"do
     # binding.pry
@@ -62,7 +62,7 @@ describe "comedian index page" do
   end
 
   it "shows a count of a comedian's specials" do
-    visit root_path
+    visit comedians_path
 
     within ".comedian#{@comedian_2.id}"do
       expect(page).to have_content("Number of specials: 2")
@@ -74,7 +74,7 @@ describe "comedian index page" do
   end
 
   it "shows a statistics area" do
-    visit root_path
+    visit comedians_path
 
     within ".statistics" do
       expect(page).to have_content("Average age: 34")
@@ -88,7 +88,7 @@ describe "comedian index page" do
   end
 
   it "shows a link to new comedians page" do
-    visit root_path
+    visit comedians_path
 
     within ".new_link" do
       expect(page).to have_link("Add new comedian")
