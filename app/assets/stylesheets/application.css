@@ -13,7 +13,43 @@
  *= require_tree .
  *= require_self
  */
+ .welcome_container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ }
+.welcome_message {
+  font-size: 50px;
+  background-color: burlywood;
+  color: black;
+  font-family: "blippo", fantasy;
+  padding: 15px;
+}
+.enter_link {
+  font-size: 25px;
+  background-color: burlywood;
+  color: black;
+  padding: 10px;
+}
+.info_box {
+  font-size: 20px;
+  background-color: burlywood;
+  color: black;
+  text-align: center;
+}
 .special_image {
   height: 268px;
   width: 182px;
+}
+.welcome_background {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  z-index: -5;
 }
