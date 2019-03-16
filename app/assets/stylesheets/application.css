@@ -15,8 +15,8 @@
  */
  .welcome_container {
    display: flex;
+   justify-content: space-between;
    flex-direction: column;
-   justify-content: center;
    align-items: center;
  }
 .welcome_message {
@@ -24,23 +24,25 @@
   background-color: burlywood;
   color: black;
   font-family: "blippo", fantasy;
-  padding: 15px;
+  padding: 10px;
+  padding-bottom: 2px;
 }
 .enter_link {
   font-size: 25px;
   background-color: burlywood;
   color: black;
   padding: 10px;
+  margin-bottom: 20px;
+  align-self: center;
 }
 .info_box {
-  font-size: 20px;
+  font-size: 15px;
   background-color: burlywood;
   color: black;
   text-align: center;
-}
-.special_image {
-  height: 268px;
-  width: 182px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
 }
 .welcome_background {
   min-height: 100%;
@@ -52,4 +54,8 @@
   left: 0;
   display: block;
   z-index: -5;
+}
+.special_image {
+  height: 268px;
+  width: 182px;
 }
