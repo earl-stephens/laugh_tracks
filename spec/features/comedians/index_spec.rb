@@ -76,7 +76,7 @@ describe "comedian index page" do
   it "shows a statistics area" do
     visit comedians_path
 
-    within ".statistics" do
+    within ".stats_container" do
       expect(page).to have_content("Average age: 34")
       expect(page).to have_content("Average special run length: 60")
       expect(page).to have_content("Cities:")
