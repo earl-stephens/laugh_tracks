@@ -18,24 +18,26 @@
 <div class="comedian_container">
   <h2 class="comic_header">Comedians</h2>
   <% @comedians.each do |comedian| %>
+  <section class="comedian<%= comedian.id %>">
     <div class="comedian_card_container">
-      <div class="comedian_info_section">
-        <section class="comedian<%= comedian.id %>">
-          <p class="comic_name"><%= comedian.name %></p>
-          <ul>
-            <li>Age: <%= comedian.age %></li>
-            <li>City: <%= comedian.city %></li>
-            <li>Number of specials: <%= comedian.specials.count %></li>
-          </ul>
-      </div>
+        <div class="comedian_info_section">
+            <p class="comic_name"><%= comedian.name %></p>
+            <ul>
+              <li>Age: <%= comedian.age %></li>
+              <li>City: <%= comedian.city %></li>
+              <li>Number of specials: <%= comedian.specials.count %></li>
+            </ul>
+        </div>
+      <section class="specials_container">
         <% comedian.specials.each do |special| %>
-        <div class="specials_info_section">
-          <p><img src="<%= special.image %>" class="special_image"/></p>
+          <div class="specials_info_section">
+            <p><img src="<%= special.image %>" class="special_image"/></p>
             <%= special.title %>
             <p>Length: <%= special.length %></p>
           </div>
         <% end %>
       </section>
     </div>
+  </section>
   <% end %>
 </div>
