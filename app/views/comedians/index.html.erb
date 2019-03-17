@@ -1,35 +1,41 @@
-<h1>Welcome to Laugh Tracks!</h1>
-
-<section class="statistics">
-  <h2>Statistics</h2>
-  <p>Average age: <%= @avg_age.round %></p>
-  <p>Total number of specials: <%= @total_special_count %><p>
-  <p>Average special run length: <%= @avg_run_length %></p>
-  <p>Cities:
-    <ul>
-      <% @cities.each do |city| %>
-        <li><%= city %></li>
-      <% end %>
-    </ul></p>
+<section class="nav_bar_container">
+  <h1 class="header_item">Welcome to Laugh Tracks</h1>
 </section>
 
-<section class="new_link">
-  <%= link_to "Add new comedian", new_comedian_path %>
-</section>
-
-<h2>Comedians</h2>
-<% @comedians.each do |comedian| %>
-  <section class="comedian<%= comedian.id %>">
-    <ul>
-      <li><%= comedian.name %></li>
-      <li>Age: <%= comedian.age %></li>
-      <li>City: <%= comedian.city %></li>
-      <li>Number of specials: <%= comedian.specials.count %></li>
-    </ul>
-    <% comedian.specials.each do |special| %>
-      <p><img src="<%= special.image %>" class="special_image"/></p>
-        <%= special.title %>
-        <p>Length: <%= special.length %></p>
-    <% end %>
+<div class="stats_container"
+  <section class="statistics">
+    <h2 class="stats_header">Statistics</h2>
+    <p class="stats1"><em>Average age:</em> <%= @avg_age.round %></p>
+    <p class="stats1"><em>Total number of specials:</em> <%= @total_special_count %><p>
+    <p class="stats1"><em>Average special run length:</em> <%= @avg_run_length %></p>
+    <p class="stats4"><em>Cities:</em> <%= @cities.join(', ') %></p>
+    <section class="new_link">
+      <%= link_to "Add new comedian", new_comedian_path %>
+    </section>
   </section>
-<% end %>
+</div>
+
+<div class="comedian_container">
+  <h2 class="comic_header">Comedians</h2>
+  <% @comedians.each do |comedian| %>
+    <div class="comedian_card_container">
+      <div class="comedian_info_section">
+        <section class="comedian<%= comedian.id %>">
+          <p class="comic_name"><%= comedian.name %></p>
+          <ul>
+            <li>Age: <%= comedian.age %></li>
+            <li>City: <%= comedian.city %></li>
+            <li>Number of specials: <%= comedian.specials.count %></li>
+          </ul>
+      </div>
+        <% comedian.specials.each do |special| %>
+        <div class="specials_info_section">
+          <p><img src="<%= special.image %>" class="special_image"/></p>
+            <%= special.title %>
+            <p>Length: <%= special.length %></p>
+          </div>
+        <% end %>
+      </section>
+    </div>
+  <% end %>
+</div>
